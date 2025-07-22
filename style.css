@@ -1,0 +1,120 @@
+/* ==== Styles ==== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* ==== BODY ==== */
+body {
+  display: grid;
+  gap: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto, "Helvetica Neue", Arial, sans-serif;
+  grid-template-rows: auto auto 1fr auto; /* header, theme-section, main, footer */
+  grid-template-areas: 
+    "header"
+    "theme-section"
+    "main"
+    "footer";
+  min-height: 100vh;
+  line-height: 1.6;
+  
+  background-color: #2a2a2a;
+  color: rgb(218, 205, 205);
+}
+h1, h2 {
+  font-size: 22px;
+  margin-bottom: 0.5rem;
+}
+/* #### LINKS #### */
+a {
+  color: #FF8FA3;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #FFF0F3;
+}
+/* Optional: Nur Desktop → zentriere dort */
+@media (min-width: 800px) {
+  body {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* ==== Header ==== */
+header h1 {
+  font-size: 35px;
+  font-weight: 800;
+}
+header {
+  grid-area: header;
+}
+header, footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  padding: 1rem;
+  background-color: #800F2F;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+/* ==== THEME-SECTION ==== */
+.theme-section {
+  grid-area: theme-section;
+}
+.theme-section, main {
+  background-color: #1e1e1e;
+  border-radius: 0.4rem;
+  border: 1px solid #3f3f3f;
+  border-top: 2px solid #FF8FA3;
+  border-right: 2px solid #FF8FA3;
+  margin: 1rem;
+  padding: 2rem;
+}
+
+/* ==== MAIN ==== */
+main {
+  grid-area: main;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-content {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+.card-content a {
+  background-color: #C9184A;
+  border-radius: 0.4rem;
+  text-align: center;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+footer  {
+  border-top: 1px solid #3f3f3f;
+  grid-area: footer;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
